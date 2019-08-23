@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psychic-Game</title>
+</head>
+
+
+<body>
+    <h1>The Psychic Game</h1>
+     <div>
+        <p id="directions-text">Guess what letter I'm thinking of</p>
+        <p id="wins-text">Wins:</p>
+        <p id="losses-text">Losses:</p>
+        <p id="guessesleft-text">Guesses left:</p>
+        <p id="guessessofar-text">Guesses so far:</p>
+    </div>
+
+    <script type="text/javascript">
+
+    var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    
+    var wins = 0;
+    var losses = 0;
+    var guessesleft= 10;
+    var guessessofar= [];
+
+    var winsText = document.getElementById("wins-text");
+    var lossesText = document.getElementById("losses-text");
+    var guessesleftText = document.getElementById("guessesleft-text");
+    var guessessofarText = document.getElementById("guessessofar-text");
+
+    var userChoiceText = document.getElementById("userchoice-text");
+
+    document.onkeyup = function(event) {
+
+    var userGuess = event.key;
+
+    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+    if (userGuess === computerGuess) {
+          wins++;
+        }
+
+        winsText.textContent = "wins: " + wins;
+      }
+   
+
+    </script>
+    
+</body>
+</html>
